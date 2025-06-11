@@ -1,51 +1,94 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Stethoscope, Calendar, Shield, ChevronLeft, ChevronRight, Star, GraduationCap } from "lucide-react";
+import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Stethoscope, Calendar, Shield, ChevronLeft, ChevronRight, Star, GraduationCap, MessageCircle, BookOpen, Activity } from "lucide-react";
 import { DoctoraliaButton } from "@/components/doctoralia-button";
+import { GoogleCalendarButton } from "@/components/google-calendar-button";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { Header } from "@/components/header";
+import { ContactButtons } from "@/components/contact-buttons";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { QuickWhatsAppButton, ContactLinkButton } from "@/components/quick-contact-buttons";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloat />
+
       {/* Header/Navigation */}
-      <header className="bg-white shadow-sm border-b border-blue-100 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Heart className="h-8 w-8 text-blue-600" />
-            <h1 className="text-2xl font-bold text-gray-900">Dr. Cardios</h1>
-          </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#inicio" className="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-            <a href="#sobre" className="text-gray-700 hover:text-blue-600 transition-colors">Sobre</a>
-            <a href="#servicos" className="text-gray-700 hover:text-blue-600 transition-colors">Serviços</a>
-            <a href="#consultorio" className="text-gray-700 hover:text-blue-600 transition-colors">Consultório</a>
-            <a href="#contato" className="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
-          </nav>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-            Agendar Consulta
-          </Button>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section id="inicio" className="bg-gradient-to-br from-blue-50 to-white py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Cuidando do seu <span className="text-blue-600">coração</span> com excelência
+              Resolva seus problemas do <span className="text-blue-600">coração</span> com segurança
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Especialista em cardiologia com mais de 30 anos de experiência, oferecendo 
-              atendimento personalizado e tecnologia de ponta para cuidar da sua saúde cardiovascular.
+              Consultas cardiológicas personalizadas com mais de 30 anos de experiência. 
+              Tratamento contínuo e planos adaptados às suas necessidades de saúde cardiovascular.
             </p>
+            
+            {/* Main CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <GoogleCalendarButton />
+              <ContactButtons variant="hero" showLabels={true} />
+            </div>
+
+            {/* Quick Contact Strip */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-blue-100 shadow-lg">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <div className="flex items-center space-x-2 text-gray-700">
+                  <WhatsAppIcon className="h-5 w-5 text-green-500" />
+                  <span className="font-medium">(13) 99790-5778</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-700">
+                  <Phone className="h-5 w-5 text-blue-600" />
+                  <span className="font-medium">(13) 3221-5375</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-700">
+                  <MapPin className="h-5 w-5 text-blue-600" />
+                  <span className="font-medium">Av. Conselheiro Nébias, 756</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tratamento Contínuo - Destaque */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <Activity className="h-16 w-16 mx-auto mb-6 text-blue-200" />
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Tratamento Contínuo Personalizado</h3>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Não apenas uma consulta, mas um acompanhamento completo da sua saúde cardiovascular. 
+              Planos de tratamento adaptados ao seu estilo de vida e necessidades específicas.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 text-center mb-8">
+              <div className="bg-white/10 rounded-lg p-6">
+                <Calendar className="h-8 w-8 mx-auto mb-3 text-blue-200" />
+                <h4 className="font-semibold mb-2">Acompanhamento Regular</h4>
+                <p className="text-blue-100 text-sm">Consultas programadas para monitoramento contínuo</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6">
+                <Heart className="h-8 w-8 mx-auto mb-3 text-blue-200" />
+                <h4 className="font-semibold mb-2">Plano Personalizado</h4>
+                <p className="text-blue-100 text-sm">Tratamento adaptado às suas necessidades específicas</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6">
+                <Shield className="h-8 w-8 mx-auto mb-3 text-blue-200" />
+                <h4 className="font-semibold mb-2">Prevenção Ativa</h4>
+                <p className="text-blue-100 text-sm">Foco na prevenção e qualidade de vida</p>
+              </div>
+            </div>
+            
+            {/* Quick Contact in Hero Section */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                <Calendar className="mr-2 h-5 w-5" />
-                Agendar Consulta
-              </Button>
-              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3">
-                <Phone className="mr-2 h-5 w-5" />
-                Contato Direto
-              </Button>
+              <QuickWhatsAppButton />
+              <GoogleCalendarButton />
             </div>
           </div>
         </div>
@@ -195,7 +238,10 @@ export default function Home() {
                     </div>
                     <p className="text-lg font-semibold text-gray-900 mb-2">182 Avaliações</p>
                     <p className="text-gray-600 mb-4">Veja o que os pacientes dizem sobre o atendimento</p>
-                    <DoctoraliaButton />
+                    <div className="space-y-3">
+                      <DoctoraliaButton />
+                      <ContactButtons variant="compact" showLabels={false} />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -204,14 +250,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Serviços */}
-      <section id="servicos" className="py-20 bg-white">
+      {/* Tratamentos e Consultas */}
+      <section id="tratamentos" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Consultas e Tratamentos</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Oferecemos uma gama completa de serviços cardiológicos com tecnologia de ponta 
-              e atendimento personalizado.
+              Foco na resolução dos seus problemas cardiovasculares com consultas detalhadas 
+              e planos de tratamento personalizados para cada paciente.
             </p>
           </div>
           
@@ -221,9 +267,9 @@ export default function Home() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Heart className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Consulta Cardiológica</CardTitle>
+                <CardTitle>Consulta Cardiológica Completa</CardTitle>
                 <CardDescription>
-                  Avaliação completa da saúde cardiovascular com exame físico detalhado.
+                  Avaliação detalhada da sua saúde cardiovascular com tempo adequado para cada paciente.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -231,11 +277,11 @@ export default function Home() {
             <Card className="border-blue-100 hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Stethoscope className="h-6 w-6 text-blue-600" />
+                  <Activity className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Eletrocardiograma</CardTitle>
+                <CardTitle>Tratamento de Hipertensão</CardTitle>
                 <CardDescription>
-                  Exame não invasivo para avaliação da atividade elétrica do coração.
+                  Especialização em hipertensão arterial com planos de controle personalizados.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -245,9 +291,9 @@ export default function Home() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Ecocardiograma</CardTitle>
+                <CardTitle>Planos Preventivos</CardTitle>
                 <CardDescription>
-                  Ultrassom do coração para avaliação detalhada das estruturas cardíacas.
+                  Prevenção de doenças cardiovasculares com acompanhamento contínuo.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -257,9 +303,9 @@ export default function Home() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Teste Ergométrico</CardTitle>
+                <CardTitle>Atendimento Acessível</CardTitle>
                 <CardDescription>
-                  Avaliação da capacidade física e resposta cardiovascular ao exercício.
+                  Consultas com agendamento flexível e múltiplas formas de contato.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -267,11 +313,11 @@ export default function Home() {
             <Card className="border-blue-100 hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6 text-blue-600" />
+                  <Calendar className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Holter 24h</CardTitle>
+                <CardTitle>Acompanhamento Contínuo</CardTitle>
                 <CardDescription>
-                  Monitoramento contínuo do ritmo cardíaco durante 24 horas.
+                  Monitoramento regular da sua saúde cardiovascular com consultas programadas.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -279,11 +325,11 @@ export default function Home() {
             <Card className="border-blue-100 hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-blue-600" />
+                  <BookOpen className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Check-up Preventivo</CardTitle>
+                <CardTitle>Orientação Educativa</CardTitle>
                 <CardDescription>
-                  Avaliação completa para prevenção de doenças cardiovasculares.
+                  Educação sobre saúde cardiovascular e mudanças de estilo de vida.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -291,72 +337,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Consultório */}
-      <section id="consultorio" className="py-20 bg-blue-50">
+      {/* Blog Educativo */}
+      <section id="blog" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Nosso Consultório</h3>
-            <p className="text-xl text-gray-600">
-              Ambiente moderno e acolhedor, equipado com tecnologia de ponta
+            <BookOpen className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Blog Educativo</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Conteúdo educativo sobre saúde cardiovascular, dicas de prevenção e informações 
+              atualizadas sobre cardiologia para você e sua família.
             </p>
           </div>
 
-          {/* Carrossel de Imagens do Consultório */}
-          <div className="relative">
-            <Card className="p-8">
-              <div className="relative">
-                <div className="flex items-center justify-center h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 border-2 border-blue-300">
-                  <div className="text-center">
-                    <Heart className="h-20 w-20 text-blue-600 mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold text-blue-600 mb-2">Imagens do Consultório</h4>
-                    <p className="text-blue-500">Isso aqui vai ser um scroll de imagens</p>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center">
+                  <Heart className="h-12 w-12 text-blue-600" />
                 </div>
-                
-                {/* Controles do carrossel */}
-                <button className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all">
-                  <ChevronLeft className="h-6 w-6 text-blue-600" />
-                </button>
-                <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all">
-                  <ChevronRight className="h-6 w-6 text-blue-600" />
-                </button>
-
-                {/* Indicadores do carrossel */}
-                <div className="flex justify-center space-x-2 mt-4">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                  <div className="w-3 h-3 bg-blue-200 rounded-full"></div>
-                  <div className="w-3 h-3 bg-blue-200 rounded-full"></div>
-                  <div className="w-3 h-3 bg-blue-200 rounded-full"></div>
-                </div>
-              </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Prevenção de Infartos</h4>
+                <p className="text-gray-600 mb-4">Como identificar sinais precoces e prevenir problemas cardíacos graves.</p>
+                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                  Ler Artigo
+                </Button>
+              </CardContent>
             </Card>
 
-            {/* Grid de informações sobre o consultório */}
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-blue-600" />
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center">
+                  <Activity className="h-12 w-12 text-blue-600" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Tecnologia Avançada</h4>
-                <p className="text-gray-600">Equipamentos de última geração para diagnósticos precisos</p>
-              </Card>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Exercícios para o Coração</h4>
+                <p className="text-gray-600 mb-4">Atividades físicas seguras e benéficas para a saúde cardiovascular.</p>
+                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                  Ler Artigo
+                </Button>
+              </CardContent>
+            </Card>
 
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-blue-600" />
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center">
+                  <Shield className="h-12 w-12 text-blue-600" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Ambiente Acolhedor</h4>
-                <p className="text-gray-600">Espaço pensado para o conforto e bem-estar dos pacientes</p>
-              </Card>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Alimentação Saudável</h4>
+                <p className="text-gray-600 mb-4">Dicas nutricionais para manter o coração saudável e forte.</p>
+                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                  Ler Artigo
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
 
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-blue-600" />
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Atendimento Personalizado</h4>
-                <p className="text-gray-600">Equipe dedicada e tempo adequado para cada consulta</p>
-              </Card>
-            </div>
+          <div className="text-center mt-12">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <BookOpen className="mr-2 h-5 w-5" />
+              Ver Todos os Artigos
+            </Button>
           </div>
         </div>
       </section>
@@ -378,12 +416,34 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <WhatsAppIcon className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">WhatsApp</div>
+                    <div className="text-gray-600">(13) 99790-5778</div>
+                    <ContactLinkButton 
+                      type="whatsapp"
+                      className="text-green-600 hover:text-green-700 text-sm font-medium"
+                    >
+                      Clique para conversar →
+                    </ContactLinkButton>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <Phone className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Telefone</div>
-                    <div className="text-gray-600">(13) 99999-9999</div>
+                    <div className="text-gray-600">(13) 3221-5375</div>
+                    <ContactLinkButton 
+                      type="phone"
+                      className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                    >
+                      Clique para ligar →
+                    </ContactLinkButton>
                   </div>
                 </div>
 
@@ -430,14 +490,12 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle className="text-2xl mb-4">Agende sua Consulta</CardTitle>
                   <CardDescription className="text-blue-100">
-                    Entre em contato conosco para agendar sua consulta e cuidar da saúde do seu coração.
+                    Múltiplas formas de agendamento para sua comodidade.
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-blue-50">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Agendar Agora
-                  </Button>
+                <CardContent className="space-y-4">
+                  <GoogleCalendarButton />
+                  <ContactButtons />
                 </CardContent>
               </Card>
 
@@ -481,8 +539,8 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#inicio" className="hover:text-blue-400 transition-colors">Início</a></li>
                 <li><a href="#sobre" className="hover:text-blue-400 transition-colors">Sobre</a></li>
-                <li><a href="#servicos" className="hover:text-blue-400 transition-colors">Serviços</a></li>
-                <li><a href="#consultorio" className="hover:text-blue-400 transition-colors">Consultório</a></li>
+                <li><a href="#tratamentos" className="hover:text-blue-400 transition-colors">Tratamentos</a></li>
+                <li><a href="#blog" className="hover:text-blue-400 transition-colors">Blog</a></li>
                 <li><a href="#contato" className="hover:text-blue-400 transition-colors">Contato</a></li>
               </ul>
             </div>
@@ -490,7 +548,7 @@ export default function Home() {
             <div>
               <h5 className="text-lg font-semibold mb-4">Contato</h5>
               <div className="space-y-2 text-gray-400">
-                <div>(13) 99999-9999</div>
+                <div>(13) 99790-5778</div>
                 <div>contato@drcardios.com.br</div>
                 <div>Av. Conselheiro Nébias, 756<br />Conj. 2007 - Santos/SP</div>
               </div>
