@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Stethoscope, Calendar, Shield, ChevronLeft, ChevronRight, Star, GraduationCap, MessageCircle, BookOpen, Activity } from "lucide-react";
+import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Stethoscope, Calendar, Shield, Star, GraduationCap, BookOpen, Activity } from "lucide-react";
 import { DoctoraliaButton } from "@/components/doctoralia-button";
 import { GoogleCalendarButton } from "@/components/google-calendar-button";
 import { WhatsAppFloat } from "@/components/whatsapp-float";

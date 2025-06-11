@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "./whatsapp-icon";
-import { GoogleCalendarButton } from "./google-calendar-button";
 
 export function QuickWhatsAppButton() {
   const handleWhatsAppClick = () => {
