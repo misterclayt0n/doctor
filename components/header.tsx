@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import { GoogleCalendarButton } from "@/components/google-calendar-button";
+import { DoctoraliaAppointmentButton } from "@/components/doctoralia-appointment-button";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import Image from "next/image";
 
@@ -73,7 +73,7 @@ export function Header() {
               </Button>
             </>
           )}
-          <GoogleCalendarButton />
+          <DoctoraliaAppointmentButton />
         </div>
       </div>
     </header>

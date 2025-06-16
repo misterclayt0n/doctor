@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Shield, Star, GraduationCap, Activity } from "lucide-react";
 import { DoctoraliaButton } from "@/components/doctoralia-button";
-import { GoogleCalendarButton } from "@/components/google-calendar-button";
+import { DoctoraliaAppointmentButton } from "@/components/doctoralia-appointment-button";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { Header } from "@/components/header";
 import { ContactButtons } from "@/components/contact-buttons";
@@ -52,7 +52,7 @@ export default function Home() {
               
               {/* Main CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 initial-hidden animate-fade-in-up delay-300">
-                <GoogleCalendarButton />
+                <DoctoraliaAppointmentButton />
                 <ContactButtons variant="hero" showLabels={true} />
               </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
             {/* Quick Contact in Hero Section */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <QuickWhatsAppButton />
-              <GoogleCalendarButton />
+              <DoctoraliaAppointmentButton />
             </div>
           </div>
         </div>
@@ -605,7 +605,7 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <GoogleCalendarButton />
+                  <DoctoraliaAppointmentButton />
                   <ContactButtons variant="white" />
                 </CardContent>
               </Card>
