@@ -47,7 +47,7 @@ export default function Home() {
                 <br />
                 <br />
                 <span className="font-semibold text-slate-700">
-                  Especialista em Cardiologia com formação USP e experiência internacional!
+                  Especialista em Cardiologia com formação USP
                 </span>
               </p>
               
