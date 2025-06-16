@@ -231,7 +231,7 @@ export default function Home() {
               <h3 className="text-4xl font-bold text-slate-800 mb-6">Dr. Rodolfo Leite Arantes</h3>
               
                             {/* Card com formação acadêmica */}
-              <Card className="mb-8 border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
+              <Card className="mb-8 border-blue-200 bg-blue-50/90 backdrop-blur-sm shadow-lg">
                 <CardHeader>
                   <div className="flex items-center space-x-3 mb-4">
                     <Activity className="h-8 w-8 text-blue-600 animate-pulse" />
@@ -260,7 +260,7 @@ export default function Home() {
 
               {/* Credenciais e especialidades */}
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
+                <Card className="border-blue-200 bg-blue-50/90 backdrop-blur-sm shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                       <Activity className="h-6 w-6 text-blue-600 animate-pulse" />
@@ -283,7 +283,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
+                <Card className="border-blue-200 bg-blue-50/90 backdrop-blur-sm shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                       <Activity className="h-6 w-6 text-blue-600 animate-pulse" />
@@ -310,7 +310,7 @@ export default function Home() {
 
             {/* Coluna lateral com foto e links */}
             <div className="space-y-6">
-              <Card className="border-blue-200 bg-white/95 backdrop-blur-sm shadow-xl">
+              <Card className="border-blue-200 bg-blue-50/95 backdrop-blur-sm shadow-xl">
                 <CardContent className="p-8">
                   <div className="text-center">
                     {/* Foto profissional do doutor */}
@@ -338,7 +338,7 @@ export default function Home() {
               </Card>
 
               {/* Card com avaliações e link do Doctoralia */}
-              <Card className="border-blue-200 bg-white/95 backdrop-blur-sm shadow-xl">
+              <Card className="border-blue-200 bg-blue-50/95 backdrop-blur-sm shadow-xl">
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="flex justify-center mb-3">
