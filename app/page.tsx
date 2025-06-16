@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Shield, Star, GraduationCap, Activity } from "lucide-react";
 import { DoctoraliaButton } from "@/components/doctoralia-button";
@@ -14,7 +13,7 @@ import { OfficeGallery } from "@/components/office-gallery";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       {/* WhatsApp Floating Button */}
       <WhatsAppFloat />
 
@@ -22,31 +21,31 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-white py-20">
+      <section id="inicio" className="bg-gradient-to-br from-blue-50/80 via-blue-100/60 to-blue-50/40 py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Coluna de texto */}
             <div className="text-center lg:text-left initial-hidden animate-fade-in-left">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-slate-600 mb-6 initial-hidden animate-fade-in-up delay-100">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-slate-700 mb-6 initial-hidden animate-fade-in-up delay-100">
                 Resolva seus problemas de{" "}
                 <FlipWords
                   words={["coração", "saúde", "confiança"]}
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 font-bold"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 font-bold"
                   duration={2500}
                 />{" "}
                 <span className="font-bold text-slate-800 drop-shadow-lg">
                   com segurança
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
                     .
                   </span>
                 </span>
               </h2>
-              <p className="lg:text-xl leading-relaxed text-slate-500 mb-8 max-w-3xl mx-auto lg:mx-0 initial-hidden animate-fade-in-up delay-200">
+              <p className="lg:text-xl leading-relaxed text-slate-600 mb-8 max-w-3xl mx-auto lg:mx-0 initial-hidden animate-fade-in-up delay-200">
                 Consultas cardiológicas personalizadas com mais de 30 anos de experiência. 
                 Tratamento contínuo e planos adaptados às suas necessidades de saúde cardiovascular.
                 <br />
                 <br />
-                <span className="font-semibold text-slate-700">
+                <span className="font-semibold text-blue-700">
                   Especialista em Cardiologia com formação USP
                 </span>
               </p>
@@ -58,10 +57,10 @@ export default function Home() {
               </div>
 
               {/* Quick Contact Strip */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-slate-200 shadow-xl hover-lift initial-hidden animate-fade-in-up delay-400">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border border-blue-100 shadow-xl hover-lift initial-hidden animate-fade-in-up delay-400">
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-8">
                   <div className="flex items-center space-x-2 text-slate-700">
-                    <WhatsAppIcon className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                    <WhatsAppIcon className="h-5 w-5 text-blue-500 flex-shrink-0" />
                     <span className="font-medium whitespace-nowrap">(13) 99790-5778</span>
                   </div>
                   <div className="flex items-center space-x-2 text-slate-700">
@@ -69,7 +68,7 @@ export default function Home() {
                     <span className="font-medium whitespace-nowrap">(13) 3221-5375</span>
                   </div>
                   <div className="flex items-center space-x-2 text-slate-700">
-                    <Activity className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                    <Activity className="h-5 w-5 text-blue-700 flex-shrink-0" />
                     <span className="font-medium">Av. Conselheiro Nébias, 756</span>
                   </div>
                 </div>
@@ -101,30 +100,30 @@ export default function Home() {
       </section>
 
       {/* Tratamento Contínuo - Destaque */}
-      <section className="py-16 bg-gradient-to-r from-slate-800 via-blue-800 to-slate-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 via-slate-800 to-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <Activity className="h-20 w-20 mx-auto mb-6 text-blue-300 animate-pulse" />
+            <Activity className="h-20 w-20 mx-auto mb-6 text-blue-200 animate-pulse" />
             <h3 className="text-3xl md:text-4xl font-bold mb-4">Tratamento Contínuo Personalizado</h3>
-            <p className="text-xl text-slate-200 mb-8 leading-relaxed">
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Não apenas uma consulta, mas um acompanhamento completo da sua saúde cardiovascular. 
               Planos de tratamento adaptados ao seu estilo de vida e necessidades específicas.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-300 animate-float" />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-300/30">
+                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-200 animate-float" />
                 <h4 className="font-semibold mb-2">Acompanhamento Regular</h4>
-                <p className="text-slate-200 text-sm">Consultas programadas para monitoramento contínuo</p>
+                <p className="text-blue-100 text-sm">Consultas programadas para monitoramento contínuo</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-300 animate-float" style={{animationDelay: '1s'}} />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-300/30">
+                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-200 animate-float" style={{animationDelay: '1s'}} />
                 <h4 className="font-semibold mb-2">Plano Personalizado</h4>
-                <p className="text-slate-200 text-sm">Tratamento adaptado às suas necessidades específicas</p>
+                <p className="text-blue-100 text-sm">Tratamento adaptado às suas necessidades específicas</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-300 animate-float" style={{animationDelay: '2s'}} />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-300/30">
+                <Activity className="h-10 w-10 mx-auto mb-3 text-blue-200 animate-float" style={{animationDelay: '2s'}} />
                 <h4 className="font-semibold mb-2">Prevenção Ativa</h4>
-                <p className="text-slate-200 text-sm">Foco na prevenção e qualidade de vida</p>
+                <p className="text-blue-100 text-sm">Foco na prevenção e qualidade de vida</p>
               </div>
             </div>
             
@@ -138,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* Estatísticas */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100/50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center initial-hidden animate-fade-in-up hover-lift">
@@ -162,13 +161,13 @@ export default function Home() {
       </section>
 
       {/* Galeria do Consultório */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/40 to-white">
+      <section className="py-20 bg-gradient-to-br from-blue-100/30 via-blue-50/50 to-blue-100/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4 initial-hidden animate-fade-in-up">
+            <h3 className="text-4xl font-bold text-slate-800 mb-4 initial-hidden animate-fade-in-up">
               Nosso Consultório
             </h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto initial-hidden animate-fade-in-up delay-100">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto initial-hidden animate-fade-in-up delay-100">
               Conheça nosso espaço moderno e acolhedor, projetado para oferecer o máximo conforto 
               e tranquilidade durante sua consulta cardiológica.
             </p>
@@ -190,30 +189,30 @@ export default function Home() {
 
           {/* Informações do consultório */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <Card className="border-slate-200 hover-lift initial-hidden animate-fade-in-up delay-300 bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover-lift initial-hidden animate-fade-in-up delay-300 bg-blue-50/90 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <Activity className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" />
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Localização Privilegiada</h4>
+                <h4 className="text-xl font-semibold text-slate-800 mb-2">Localização Privilegiada</h4>
                 <p className="text-slate-600">
                   Centro de Santos, com fácil acesso e próximo ao transporte público.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-slate-200 hover-lift initial-hidden animate-fade-in-up delay-400 bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover-lift initial-hidden animate-fade-in-up delay-400 bg-blue-50/90 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <Activity className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" style={{animationDelay: '1s'}} />
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Ambiente Seguro</h4>
+                <h4 className="text-xl font-semibold text-slate-800 mb-2">Ambiente Seguro</h4>
                 <p className="text-slate-600">
                   Protocolos de segurança e higienização seguindo todas as normas sanitárias.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-slate-200 hover-lift initial-hidden animate-fade-in-up delay-500 bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover-lift initial-hidden animate-fade-in-up delay-500 bg-blue-50/90 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <Activity className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" style={{animationDelay: '2s'}} />
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Atendimento Humanizado</h4>
+                <h4 className="text-xl font-semibold text-slate-800 mb-2">Atendimento Humanizado</h4>
                 <p className="text-slate-600">
                   Espaço acolhedor projetado para seu conforto e bem-estar durante a consulta.
                 </p>
@@ -224,20 +223,20 @@ export default function Home() {
       </section>
 
       {/* Sobre */}
-      <section id="sobre" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50/60">
+      <section id="sobre" className="py-20 bg-gradient-to-br from-blue-50/20 via-blue-100/80 to-blue-50/40">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Coluna principal com informações do médico */}
             <div className="lg:col-span-2">
-              <h3 className="text-4xl font-bold text-gray-900 mb-6">Dr. Rodolfo Leite Arantes</h3>
+              <h3 className="text-4xl font-bold text-slate-800 mb-6">Dr. Rodolfo Leite Arantes</h3>
               
-              {/* Card com formação acadêmica */}
-              <Card className="mb-8 border-slate-200 bg-white/80 backdrop-blur-sm shadow-lg">
+                            {/* Card com formação acadêmica */}
+              <Card className="mb-8 border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
                 <CardHeader>
-                                      <div className="flex items-center space-x-3 mb-4">
-                      <Activity className="h-8 w-8 text-blue-600 animate-pulse" />
-                      <CardTitle className="text-2xl text-slate-900">Formação Acadêmica e Experiência</CardTitle>
-                    </div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Activity className="h-8 w-8 text-blue-600 animate-pulse" />
+                    <CardTitle className="text-2xl text-slate-800">Formação Acadêmica e Experiência</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">
@@ -261,11 +260,11 @@ export default function Home() {
 
               {/* Credenciais e especialidades */}
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-slate-200 bg-white/80 backdrop-blur-sm shadow-lg">
+                <Card className="border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                       <Activity className="h-6 w-6 text-blue-600 animate-pulse" />
-                      <span>Credenciais</span>
+                      <span className="text-slate-800">Credenciais</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
@@ -284,11 +283,11 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-slate-200 bg-white/80 backdrop-blur-sm shadow-lg">
+                <Card className="border-blue-200 bg-white/90 backdrop-blur-sm shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                       <Activity className="h-6 w-6 text-blue-600 animate-pulse" />
-                      <span>Especialidades</span>
+                      <span className="text-slate-800">Especialidades</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
@@ -311,11 +310,11 @@ export default function Home() {
 
             {/* Coluna lateral com foto e links */}
             <div className="space-y-6">
-              <Card className="border-slate-200 bg-white/90 backdrop-blur-sm shadow-xl">
+              <Card className="border-blue-200 bg-white/95 backdrop-blur-sm shadow-xl">
                 <CardContent className="p-8">
                   <div className="text-center">
                     {/* Foto profissional do doutor */}
-                    <div className="w-48 h-60 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg border-2 border-blue-300">
+                    <div className="w-48 h-60 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg border-2 border-blue-200">
                       <Image
                         src="/doctor2.jpeg"
                         alt="Dr. Rodolfo Leite Arantes"
@@ -327,7 +326,7 @@ export default function Home() {
 
                     <div className="flex items-center justify-center space-x-2 mb-4">
                       <Activity className="h-6 w-6 text-blue-600 animate-pulse" />
-                      <h4 className="text-2xl font-bold text-slate-900">Missão</h4>
+                      <h4 className="text-2xl font-bold text-slate-800">Missão</h4>
                     </div>
                     <p className="text-slate-600 mb-6">
                       Proporcionar cuidados cardiológicos de excelência, combinando conhecimento 
@@ -339,7 +338,7 @@ export default function Home() {
               </Card>
 
               {/* Card com avaliações e link do Doctoralia */}
-              <Card className="border-slate-200 bg-white/90 backdrop-blur-sm shadow-xl">
+              <Card className="border-blue-200 bg-white/95 backdrop-blur-sm shadow-xl">
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="flex justify-center mb-3">
@@ -362,7 +361,7 @@ export default function Home() {
       </section>
 
       {/* Tratamentos e Consultas */}
-      <section id="tratamentos" className="py-20 bg-white">
+      <section id="tratamentos" className="py-20 bg-gradient-to-br from-blue-50 to-blue-100/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-4">Consultas e Tratamentos</h3>
@@ -373,10 +372,10 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg">
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg">
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Consulta Cardiológica Completa</CardTitle>
                 <CardDescription>
@@ -385,10 +384,10 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-100 hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-100 hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '1s'}}>
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '1s'}}>
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Tratamento de Hipertensão</CardTitle>
                 <CardDescription>
@@ -397,10 +396,10 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-200 hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-200 hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '2s'}}>
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '2s'}}>
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Planos Preventivos</CardTitle>
                 <CardDescription>
@@ -409,10 +408,10 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-300 hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-300 hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '3s'}}>
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '3s'}}>
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Atendimento Acessível</CardTitle>
                 <CardDescription>
@@ -421,10 +420,10 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-400 hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-400 hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '4s'}}>
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '4s'}}>
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Acompanhamento Contínuo</CardTitle>
                 <CardDescription>
@@ -433,10 +432,10 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-slate-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-500 hover-lift bg-white/80 backdrop-blur-sm">
+            <Card className="border-blue-200 hover:shadow-xl transition-all duration-300 initial-hidden animate-fade-in-up delay-500 hover-lift bg-blue-50/90 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '5s'}}>
-                  <Activity className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl flex items-center justify-center mb-4 animate-float shadow-lg" style={{animationDelay: '5s'}}>
+                  <Activity className="h-6 w-6 text-blue-700" />
                 </div>
                 <CardTitle>Orientação Educativa</CardTitle>
                 <CardDescription>
@@ -513,7 +512,7 @@ export default function Home() {
       */}
 
       {/* Contato */}
-      <section id="contato" className="py-20 bg-white">
+      <section id="contato" className="py-20 bg-gradient-to-br from-blue-100/30 via-blue-50/50 to-blue-100/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h3>
@@ -598,16 +597,16 @@ export default function Home() {
             </Card>
 
             <div className="space-y-6">
-              <Card className="p-8 bg-blue-600 text-white">
+              <Card className="p-8 bg-[#31c3fe] text-white">
                 <CardHeader>
-                  <CardTitle className="text-2xl mb-4">Agende sua Consulta</CardTitle>
-                  <CardDescription className="text-blue-100">
+                  <CardTitle className="text-2xl mb-4 text-white">Agende sua Consulta</CardTitle>
+                  <CardDescription className="text-white/90">
                     Múltiplas formas de agendamento para sua comodidade.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <GoogleCalendarButton />
-                  <ContactButtons />
+                  <ContactButtons variant="white" />
                 </CardContent>
               </Card>
 

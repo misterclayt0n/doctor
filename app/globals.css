@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #1e293b;
-  --primary: #60a5fa;
+  --primary: #31c3fe;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #334155;
@@ -13,7 +13,7 @@
   --accent-foreground: #0f172a;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #60a5fa;
+  --ring: #31c3fe;
   --card: #ffffff;
   --card-foreground: #1e293b;
   --popover: #ffffff;
@@ -203,14 +203,14 @@ html {
 
 /* Soft blue overrides */
 @layer utilities {
-  .text-blue-600 { color: #60a5fa !important; }
-  .bg-blue-600 { background-color: #60a5fa !important; }
-  .hover\:bg-blue-700:hover { background-color: #3b82f6 !important; }
-  .border-blue-600 { border-color: #60a5fa !important; }
-  .from-blue-600 { --tw-gradient-from: #60a5fa !important; }
-  .to-blue-700 { --tw-gradient-to: #3b82f6 !important; }
+  .text-blue-600 { color: #31c3fe !important; }
+  .bg-blue-600 { background-color: #31c3fe !important; }
+  .hover\:bg-blue-700:hover { background-color: #1ba8e0 !important; }
+  .border-blue-600 { border-color: #31c3fe !important; }
+  .from-blue-600 { --tw-gradient-from: #31c3fe !important; }
+  .to-blue-700 { --tw-gradient-to: #1ba8e0 !important; }
   .bg-gradient-to-r.from-blue-600.to-blue-700 {
-    --tw-gradient-from: #60a5fa !important;
-    --tw-gradient-to: #3b82f6 !important;
+    --tw-gradient-from: #31c3fe !important;
+    --tw-gradient-to: #1ba8e0 !important;
   }
 }

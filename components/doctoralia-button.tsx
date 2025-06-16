@@ -11,7 +11,7 @@ export function DoctoraliaButton() {
   return (
     <Button 
       variant="outline" 
-      className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+      className="w-full border-[#31c3fe] text-[#31c3fe] hover:bg-blue-50"
       onClick={handleClick}
     >
       <ExternalLink className="mr-2 h-4 w-4" />

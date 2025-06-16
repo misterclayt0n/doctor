@@ -45,10 +45,10 @@ export function Header() {
         </div>
         
         <nav className="hidden md:flex space-x-6">
-          <a href="#inicio" className="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-          <a href="#sobre" className="text-gray-700 hover:text-blue-600 transition-colors">Sobre</a>
-          <a href="#tratamentos" className="text-gray-700 hover:text-blue-600 transition-colors">Tratamentos</a>
-          <a href="#contato" className="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
+          <a href="#inicio" className="text-gray-700 hover:text-[#31c3fe] transition-colors">Início</a>
+          <a href="#sobre" className="text-gray-700 hover:text-[#31c3fe] transition-colors">Sobre</a>
+          <a href="#tratamentos" className="text-gray-700 hover:text-[#31c3fe] transition-colors">Tratamentos</a>
+          <a href="#contato" className="text-gray-700 hover:text-[#31c3fe] transition-colors">Contato</a>
         </nav>
         
         <div className="flex items-center space-x-3">
@@ -66,7 +66,7 @@ export function Header() {
                 onClick={handlePhoneClick}
                 size="lg"
                 variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 p-3 transition-all duration-300"
+                className="border-[#31c3fe] text-[#31c3fe] hover:bg-blue-50 p-3 transition-all duration-300"
                 aria-label="Telefone"
               >
                 <Phone className="h-5 w-5" />

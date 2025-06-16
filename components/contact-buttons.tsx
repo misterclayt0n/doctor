@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 import { WhatsAppIcon } from "./whatsapp-icon";
 
 interface ContactButtonsProps {
-  variant?: "default" | "compact" | "hero";
+  variant?: "default" | "compact" | "hero" | "white";
   showLabels?: boolean;
 }
 
@@ -72,6 +72,30 @@ export function ContactButtons({ variant = "default", showLabels = true }: Conta
     );
   }
 
+  if (variant === "white") {
+    return (
+      <div className="space-y-3">
+        <Button 
+          onClick={handleWhatsAppClick}
+          size="lg" 
+          className="w-full bg-green-500 hover:bg-green-600 text-white"
+        >
+          <WhatsAppIcon className="mr-2 h-5 w-5" />
+          {showLabels && "WhatsApp Direto"}
+        </Button>
+        <Button 
+          onClick={handlePhoneClick}
+          size="lg" 
+          variant="outline"
+          className="w-full border-white text-white hover:bg-white/10"
+        >
+          <Phone className="mr-2 h-5 w-5" />
+          {showLabels && "Ligar Agora"}
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-3">
       <Button 
@@ -86,7 +110,7 @@ export function ContactButtons({ variant = "default", showLabels = true }: Conta
         onClick={handlePhoneClick}
         size="lg" 
         variant="outline"
-        className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+        className="w-full border-[#31c3fe] text-[#31c3fe] hover:bg-blue-50"
       >
         <Phone className="mr-2 h-5 w-5" />
         {showLabels && "Ligar Agora"}
