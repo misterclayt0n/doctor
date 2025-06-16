@@ -53,9 +53,15 @@ export function OfficeGallery() {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (!selectedImage) return;
       
-      if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft') prevImage();
-      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+      if (e.key === 'ArrowLeft') {
+        setSelectedImage(prev => prev ? (prev === 1 ? 7 : prev - 1) : null);
+      }
+      if (e.key === 'ArrowRight') {
+        setSelectedImage(prev => prev ? (prev === 7 ? 1 : prev + 1) : null);
+      }
     };
 
     window.addEventListener('keydown', handleKeyPress);
