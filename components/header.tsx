@@ -37,9 +37,9 @@ export function Header() {
           <Image
             src="/cardio_arantes_logo.jpeg"
             alt="Logo Dr. Rodolfo Leite Arantes"
-            width={280}
-            height={80}
-            className="h-12 w-auto object-contain"
+            width={350}
+            height={100}
+            className="h-16 w-auto object-contain"
             priority
           />
         </div>
