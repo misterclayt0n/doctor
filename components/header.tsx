@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Heart, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { GoogleCalendarButton } from "@/components/google-calendar-button";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,17 +32,22 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-sm border-b border-blue-100 sticky top-0 z-40">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <Heart className="h-8 w-8 text-blue-600" />
-          <h1 className="text-2xl font-bold text-gray-900">Dr. Cardios</h1>
+          <Image
+            src="/cardio_arantes_logo.jpeg"
+            alt="Logo Dr. Rodolfo Leite Arantes"
+            width={280}
+            height={80}
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </div>
         
         <nav className="hidden md:flex space-x-6">
           <a href="#inicio" className="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
           <a href="#sobre" className="text-gray-700 hover:text-blue-600 transition-colors">Sobre</a>
           <a href="#tratamentos" className="text-gray-700 hover:text-blue-600 transition-colors">Tratamentos</a>
-          <a href="#blog" className="text-gray-700 hover:text-blue-600 transition-colors">Blog</a>
           <a href="#contato" className="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
         </nav>
         

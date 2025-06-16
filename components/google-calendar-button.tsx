@@ -22,7 +22,7 @@ export function GoogleCalendarButton() {
   return (
     <Button 
       onClick={handleGoogleCalendar}
-      className="bg-blue-600 hover:bg-blue-700 text-white"
+      className="bg-blue-600 hover:bg-blue-700 text-white hover-lift hover-glow transition-all duration-300"
       size="lg"
     >
       <Calendar className="mr-2 h-5 w-5" />

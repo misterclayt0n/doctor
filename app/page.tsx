@@ -8,6 +8,9 @@ import { Header } from "@/components/header";
 import { ContactButtons } from "@/components/contact-buttons";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { QuickWhatsAppButton, ContactLinkButton } from "@/components/quick-contact-buttons";
+import Image from "next/image";
+import { FlipWords } from "@/components/ui/flip-words";
+import { OfficeGallery } from "@/components/office-gallery";
 
 export default function Home() {
   return (
@@ -20,36 +23,66 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="inicio" className="bg-gradient-to-br from-blue-50 to-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Resolva seus problemas do <span className="text-blue-600">coração</span> com segurança
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Consultas cardiológicas personalizadas com mais de 30 anos de experiência. 
-              Tratamento contínuo e planos adaptados às suas necessidades de saúde cardiovascular.
-            </p>
-            
-            {/* Main CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <GoogleCalendarButton />
-              <ContactButtons variant="hero" showLabels={true} />
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Coluna de texto */}
+            <div className="text-center lg:text-left initial-hidden animate-fade-in-left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 initial-hidden animate-fade-in-up delay-100">
+                Resolva seus problemas de{" "}
+                <FlipWords
+                  words={["coração", "saúde", "confiança"]}
+                  className="text-blue-600 font-bold"
+                  duration={2500}
+                />{" "}
+                com segurança
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed initial-hidden animate-fade-in-up delay-200">
+                Consultas cardiológicas personalizadas com mais de 30 anos de experiência. 
+                Tratamento contínuo e planos adaptados às suas necessidades de saúde cardiovascular.
+              </p>
+              
+              {/* Main CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 initial-hidden animate-fade-in-up delay-300">
+                <GoogleCalendarButton />
+                <ContactButtons variant="hero" showLabels={true} />
+              </div>
+
+              {/* Quick Contact Strip */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-blue-100 shadow-lg hover-lift initial-hidden animate-fade-in-up delay-400">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-8">
+                  <div className="flex items-center space-x-2 text-gray-700">
+                    <WhatsAppIcon className="h-5 w-5 text-green-500" />
+                    <span className="font-medium">(13) 99790-5778</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-gray-700">
+                    <Phone className="h-5 w-5 text-blue-600" />
+                    <span className="font-medium">(13) 3221-5375</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-gray-700">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <span className="font-medium">Av. Conselheiro Nébias, 756</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Quick Contact Strip */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-blue-100 shadow-lg">
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <WhatsAppIcon className="h-5 w-5 text-green-500" />
-                  <span className="font-medium">(13) 99790-5778</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <Phone className="h-5 w-5 text-blue-600" />
-                  <span className="font-medium">(13) 3221-5375</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <MapPin className="h-5 w-5 text-blue-600" />
-                  <span className="font-medium">Av. Conselheiro Nébias, 756</span>
+            {/* Coluna da foto */}
+            <div className="flex justify-center lg:justify-end initial-hidden animate-fade-in-right delay-200">
+              <div className="relative hover-lift">
+                <Image
+                  src="/doctor.jpeg"
+                  alt="Dr. Rodolfo Leite Arantes"
+                  width={400}
+                  height={500}
+                  className="rounded-2xl shadow-2xl object-cover w-80 h-96 md:w-96 md:h-[500px] hover-glow"
+                  priority
+                />
+                {/* Badge de credencial */}
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-blue-100 hover-lift">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">30+</div>
+                    <div className="text-sm text-gray-600">Anos de<br/>Experiência</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,22 +131,84 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center initial-hidden animate-fade-in-up hover-lift">
               <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">30+</div>
               <div className="text-gray-600">Anos de Experiência</div>
             </div>
-            <div className="text-center">
+            <div className="text-center initial-hidden animate-fade-in-up delay-100 hover-lift">
               <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">20.000+</div>
               <div className="text-gray-600">Pacientes Atendidos</div>
             </div>
-            <div className="text-center">
+            <div className="text-center initial-hidden animate-fade-in-up delay-200 hover-lift">
               <div className="flex justify-center mb-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
+                  <Star key={i} className="h-6 w-6 text-yellow-400 fill-current animate-pulse" style={{animationDelay: `${i * 0.1}s`}} />
                 ))}
               </div>
               <div className="text-gray-600">Avaliação no Doctoralia</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria do Consultório */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-gray-900 mb-4 initial-hidden animate-fade-in-up">
+              Nosso Consultório
+            </h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto initial-hidden animate-fade-in-up delay-100">
+              Conheça nosso espaço moderno e acolhedor, projetado para oferecer o máximo conforto 
+              e tranquilidade durante sua consulta cardiológica.
+            </p>
+          </div>
+
+          {/* Carousel horizontal */}
+          <div className="relative initial-hidden animate-fade-in-up delay-200">
+            <OfficeGallery />
+            
+            {/* Indicador de scroll */}
+            <div className="flex justify-center mt-8">
+              <div className="flex items-center space-x-2 text-gray-500 text-sm">
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+                <span>Deslize para ver mais</span>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Informações do consultório */}
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
+            <Card className="border-blue-100 hover-lift initial-hidden animate-fade-in-up delay-300">
+              <CardContent className="p-6 text-center">
+                <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" />
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Localização Privilegiada</h4>
+                <p className="text-gray-600">
+                  Centro de Santos, com fácil acesso e próximo ao transporte público.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-100 hover-lift initial-hidden animate-fade-in-up delay-400">
+              <CardContent className="p-6 text-center">
+                <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" style={{animationDelay: '1s'}} />
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Ambiente Seguro</h4>
+                <p className="text-gray-600">
+                  Protocolos de segurança e higienização seguindo todas as normas sanitárias.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-100 hover-lift initial-hidden animate-fade-in-up delay-500">
+              <CardContent className="p-6 text-center">
+                <Heart className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-float" style={{animationDelay: '2s'}} />
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Atendimento Humanizado</h4>
+                <p className="text-gray-600">
+                  Espaço acolhedor projetado para seu conforto e bem-estar durante a consulta.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -210,13 +305,17 @@ export default function Home() {
               <Card className="border-blue-100">
                 <CardContent className="p-8">
                   <div className="text-center">
-                    {/* Espaço para foto profissional do doutor */}
-                    <div className="w-48 h-60 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mx-auto mb-6 flex items-center justify-center border-2 border-blue-300">
-                      <div className="text-center">
-                        <Users className="h-16 w-16 text-blue-600 mx-auto mb-2" />
-                        <span className="text-blue-600 text-sm">Foto do doctor kkk</span>
-                      </div>
+                    {/* Foto profissional do doutor */}
+                    <div className="w-48 h-60 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg border-2 border-blue-300">
+                      <Image
+                        src="/doctor2.jpeg"
+                        alt="Dr. Rodolfo Leite Arantes"
+                        width={192}
+                        height={240}
+                        className="object-cover w-full h-full"
+                      />
                     </div>
+
                     <h4 className="text-2xl font-bold text-gray-900 mb-4">Missão</h4>
                     <p className="text-gray-600 mb-6">
                       Proporcionar cuidados cardiológicos de excelência, combinando conhecimento 
@@ -262,9 +361,9 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float">
                   <Heart className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Consulta Cardiológica Completa</CardTitle>
@@ -274,9 +373,9 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up delay-100 hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float" style={{animationDelay: '1s'}}>
                   <Activity className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Tratamento de Hipertensão</CardTitle>
@@ -286,9 +385,9 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up delay-200 hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float" style={{animationDelay: '2s'}}>
                   <Shield className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Planos Preventivos</CardTitle>
@@ -298,9 +397,9 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up delay-300 hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float" style={{animationDelay: '3s'}}>
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Atendimento Acessível</CardTitle>
@@ -310,9 +409,9 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up delay-400 hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float" style={{animationDelay: '4s'}}>
                   <Calendar className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Acompanhamento Contínuo</CardTitle>
@@ -322,9 +421,9 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-blue-100 hover:shadow-lg transition-shadow">
+            <Card className="border-blue-100 hover:shadow-lg transition-shadow initial-hidden animate-fade-in-up delay-500 hover-lift">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 animate-float" style={{animationDelay: '5s'}}>
                   <BookOpen className="h-6 w-6 text-blue-600" />
                 </div>
                 <CardTitle>Orientação Educativa</CardTitle>
@@ -337,7 +436,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Educativo */}
+      {/* Blog Educativo - COMENTADO TEMPORARIAMENTE */}
+      {/* 
       <section id="blog" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -398,6 +498,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Contato */}
       <section id="contato" className="py-20 bg-white">
@@ -453,7 +554,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">E-mail</div>
-                    <div className="text-gray-600">contato@drcardios.com.br</div>
+                    <div className="text-gray-600">arantes.dr@gmail.com</div>
                   </div>
                 </div>
 
@@ -478,7 +579,6 @@ export default function Home() {
                     <div className="font-semibold text-gray-900">Horário de Atendimento</div>
                     <div className="text-gray-600">
                       Segunda a Sexta: 8h às 18h<br />
-                      Sábado: 8h às 12h
                     </div>
                   </div>
                 </div>
@@ -503,15 +603,32 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle className="text-xl text-gray-900 mb-4">Localização</CardTitle>
                   <CardDescription>
-                    Consultório localizado no centro de Santos, com fácil acesso e estacionamento.
+                    Consultório localizado no prédio Helbor, Santos, com fácil acesso e estacionamento.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-100 h-32 rounded-lg flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <MapPin className="h-8 w-8 mx-auto mb-2" />
-                      <span className="text-sm">Mapa do Google</span>
-                    </div>
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.8!2d-46.3344!3d-23.9667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDU4JzAwLjEiUyA0NsKwMjAnMDMuOCJX!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Localização do Consultório Dr. Rodolfo Leite Arantes"
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <a
+                      href="https://www.google.com/maps/search/Av.+Conselheiro+N%C3%A9bias,+756,+Santos+-+SP"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      <MapPin className="h-4 w-4" />
+                      <span className="text-sm font-medium">Abrir no Google Maps</span>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -526,8 +643,14 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Heart className="h-8 w-8 text-blue-400" />
-                <h4 className="text-2xl font-bold">Dr. Cardios</h4>
+                <Image
+                  src="/cardio_arantes_logo.jpeg"
+                  alt="Logo Dr. Rodolfo Leite Arantes"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto object-contain"
+                />
+                <h4 className="text-2xl font-bold">Dr. Rodolfo Leite Arantes</h4>
               </div>
               <p className="text-gray-400 mb-4">
                 Dr. Rodolfo Leite Arantes - Especialista em cardiologia comprometido com a saúde cardiovascular dos nossos pacientes.
@@ -540,7 +663,6 @@ export default function Home() {
                 <li><a href="#inicio" className="hover:text-blue-400 transition-colors">Início</a></li>
                 <li><a href="#sobre" className="hover:text-blue-400 transition-colors">Sobre</a></li>
                 <li><a href="#tratamentos" className="hover:text-blue-400 transition-colors">Tratamentos</a></li>
-                <li><a href="#blog" className="hover:text-blue-400 transition-colors">Blog</a></li>
                 <li><a href="#contato" className="hover:text-blue-400 transition-colors">Contato</a></li>
               </ul>
             </div>
