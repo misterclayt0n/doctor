@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Heart, Phone, Mail, MapPin, Clock, Award, Users, Shield, Star, GraduationCap, Activity } from "lucide-react";
 import { DoctoraliaButton } from "@/components/doctoralia-button";
 import { DoctoraliaAppointmentButton } from "@/components/doctoralia-appointment-button";
+import { DoctoraliaWidget } from "@/components/doctoralia-widget";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { Header } from "@/components/header";
 import { ContactButtons } from "@/components/contact-buttons";
@@ -597,16 +598,15 @@ export default function Home() {
             </Card>
 
             <div className="space-y-6">
-              <Card className="p-8 bg-[#31c3fe] text-white">
+              <Card className="p-8 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-2xl mb-4 text-white">Agende sua Consulta</CardTitle>
-                  <CardDescription className="text-white/90">
-                    Múltiplas formas de agendamento para sua comodidade.
+                  <CardTitle className="text-2xl mb-4 text-gray-900">Agende sua Consulta</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Reserve seu horário diretamente pela agenda online.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <DoctoraliaAppointmentButton />
-                  <ContactButtons variant="white" />
+                <CardContent>
+                  <DoctoraliaWidget />
                 </CardContent>
               </Card>
 
